@@ -160,6 +160,7 @@ h6,
 
 /* Navbar */
 #mainNav {
+    top: 38px;
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: #fff;
@@ -299,7 +300,7 @@ h2.h1::after {
 
 /* Hero Masthead */
 header.masthead {
-    padding-top: 4rem;
+    padding-top: calc(4rem + 38px);
     padding-bottom: 4rem;
     background: url("hero_bg.jpg");
     background-position: center;
@@ -641,5 +642,22 @@ body {
 
     header.masthead {
         min-height: 80vh;
+        padding-top: calc(5rem + 38px);
     }
+}
+
+/* Top Announcement Bar */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.top-contact-bar {
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
 }
