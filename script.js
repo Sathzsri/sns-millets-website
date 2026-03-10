@@ -79,9 +79,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 let timeLeft = 5;
                 const timerSpan = document.getElementById('popupTimer');
+                const timerContainer = timerSpan ? timerSpan.parentElement : null;
 
                 // Start 5-second countdown
-                const timerInterval = setInterval(() => {
+                let timerInterval = setInterval(() => {
                     timeLeft--;
                     if (timerSpan) timerSpan.innerText = timeLeft;
 
@@ -90,6 +91,21 @@ document.addEventListener('DOMContentLoaded', function () {
                         popupModal.hide();
                     }
                 }, 1000);
+
+                // Stop the timer if the user clicks or types in the form
+                const stopTimer = () => {
+                    clearInterval(timerInterval);
+                    if (timerContainer) {
+                        timerContainer.innerHTML = '<span class="text-primary-theme fw-bold">Take your time filling out the form!</span>';
+                    }
+                };
+
+                const modalInputs = popupModalEl.querySelectorAll('input, button');
+                modalInputs.forEach(input => {
+                    input.addEventListener('focus', stopTimer);
+                    input.addEventListener('click', stopTimer);
+                    input.addEventListener('input', stopTimer);
+                });
 
                 // Clear timer if user manually closes the modern popup
                 popupModalEl.addEventListener('hidden.bs.modal', function () {
