@@ -93,18 +93,33 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 1000);
 
                 // Stop the timer if the user interacts with the modal at all
+                let isTimerStopped = false;
                 const stopTimer = () => {
+                    if (isTimerStopped) return;
+                    isTimerStopped = true;
                     clearInterval(timerInterval);
-                    if (timerContainer && !timerContainer.innerText.includes('Take your time')) {
+                    if (timerContainer) {
                         timerContainer.innerHTML = '<span class="text-primary-theme fw-bold">Take your time filling out the form!</span>';
                     }
                 };
 
-                // Aggressive listeners: stops timer on hover, click, touch, or typing anywhere on the modal
-                popupModalEl.addEventListener('mouseenter', stopTimer);
-                popupModalEl.addEventListener('click', stopTimer);
-                popupModalEl.addEventListener('touchstart', stopTimer);
-                popupModalEl.addEventListener('focusin', stopTimer);
+                // Add robust listeners directly to the content and form areas
+                const modalContent = popupModalEl.querySelector('.modal-content');
+                if (modalContent) {
+                    modalContent.addEventListener('mouseenter', stopTimer);
+                    modalContent.addEventListener('click', stopTimer);
+                    modalContent.addEventListener('touchstart', stopTimer);
+                    modalContent.addEventListener('keydown', stopTimer);
+                    modalContent.addEventListener('focusin', stopTimer);
+                }
+
+                // Add specifically to inputs just to be absolutely certain
+                const inputs = popupModalEl.querySelectorAll('input, button');
+                inputs.forEach(input => {
+                    input.addEventListener('focus', stopTimer);
+                    input.addEventListener('click', stopTimer);
+                    input.addEventListener('input', stopTimer);
+                });
 
                 // Clear timer if user manually closes the modern popup
                 popupModalEl.addEventListener('hidden.bs.modal', function () {
