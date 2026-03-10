@@ -494,6 +494,37 @@ header.masthead .lead {
     color: #fff !important;
 }
 
+/* Google Translate Widget Styling */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+}
+
+.goog-logo-link {
+    display: none !important;
+}
+
+.goog-te-gadget {
+    color: transparent !important;
+    font-size: 0;
+}
+
+.goog-te-gadget .goog-te-combo {
+    color: var(--primary-color);
+    background-color: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
 /* Responsive fixes */
 @media (max-width: 991px) {
     #mainNav .navbar-nav .nav-item .nav-link {

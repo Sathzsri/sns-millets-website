@@ -41,6 +41,9 @@
                     <li class="nav-item"><a
                             class="nav-link btn btn-primary-theme text-white px-4 ms-lg-3 mt-2 mt-lg-0 rounded-pill"
                             href="#contact">Contact Us</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-2">
+                        <div id="google_translate_element"></div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -523,10 +526,23 @@
 
     <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Custom JS -->
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
 </body>
 
 </html>
