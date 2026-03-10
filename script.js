@@ -92,20 +92,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }, 1000);
 
-                // Stop the timer if the user clicks or types in the form
+                // Stop the timer if the user interacts with the modal at all
                 const stopTimer = () => {
                     clearInterval(timerInterval);
-                    if (timerContainer) {
+                    if (timerContainer && !timerContainer.innerText.includes('Take your time')) {
                         timerContainer.innerHTML = '<span class="text-primary-theme fw-bold">Take your time filling out the form!</span>';
                     }
                 };
 
-                const modalInputs = popupModalEl.querySelectorAll('input, button');
-                modalInputs.forEach(input => {
-                    input.addEventListener('focus', stopTimer);
-                    input.addEventListener('click', stopTimer);
-                    input.addEventListener('input', stopTimer);
-                });
+                // Aggressive listeners: stops timer on hover, click, touch, or typing anywhere on the modal
+                popupModalEl.addEventListener('mouseenter', stopTimer);
+                popupModalEl.addEventListener('click', stopTimer);
+                popupModalEl.addEventListener('touchstart', stopTimer);
+                popupModalEl.addEventListener('focusin', stopTimer);
 
                 // Clear timer if user manually closes the modern popup
                 popupModalEl.addEventListener('hidden.bs.modal', function () {
