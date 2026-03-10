@@ -446,6 +446,30 @@ header.masthead .lead {
     letter-spacing: 1px;
 }
 
+/* Certification Logos 3D Animation */
+.cert-logo-container {
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.cert-logo-container:hover {
+    transform: translateY(-10px) rotateX(10deg) rotateY(10deg) scale(1.05);
+    box-shadow: -10px 20px 35px rgba(116, 42, 42, 0.15) !important;
+    border-color: rgba(116, 42, 42, 0.2);
+}
+
+.cert-logo-3d {
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.cert-logo-container:hover .cert-logo-3d {
+    transform: translateZ(30px) scale(1.1);
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+}
+
 /* 3D Contact Form Elements */
 .contact-form-card {
     transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.6s ease;
