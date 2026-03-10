@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // Initialize AOS Animation Library
     AOS.init({
         duration: 800,
@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
+            if (targetId === '#') return;
             const targetElement = document.querySelector(targetId);
-            if(targetElement) {
+            if (targetElement) {
                 e.preventDefault();
                 targetElement.scrollIntoView({
                     behavior: 'smooth',
@@ -64,4 +64,39 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Automatic Contact Popup Modal Logic
+    const popupModalEl = document.getElementById('contactPopupModal');
+    if (popupModalEl) {
+        // Only show once per session by checking sessionStorage
+        if (!sessionStorage.getItem('contactPopupShown')) {
+            const popupModal = new bootstrap.Modal(popupModalEl);
+
+            // Show popup after a short delay (1.5 seconds)
+            setTimeout(() => {
+                popupModal.show();
+                sessionStorage.setItem('contactPopupShown', 'true');
+
+                let timeLeft = 5;
+                const timerSpan = document.getElementById('popupTimer');
+
+                // Start 5-second countdown
+                const timerInterval = setInterval(() => {
+                    timeLeft--;
+                    if (timerSpan) timerSpan.innerText = timeLeft;
+
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        popupModal.hide();
+                    }
+                }, 1000);
+
+                // Clear timer if user manually closes the modern popup
+                popupModalEl.addEventListener('hidden.bs.modal', function () {
+                    clearInterval(timerInterval);
+                });
+
+            }, 1500);
+        }
+    }
 });
