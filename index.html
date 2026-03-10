@@ -42,7 +42,40 @@
                             class="nav-link btn btn-primary-theme text-white px-4 ms-lg-3 mt-2 mt-lg-0 rounded-pill"
                             href="#contact">Contact Us</a></li>
                     <li class="nav-item ms-lg-3 mt-3 mt-lg-2">
-                        <div id="google_translate_element"></div>
+                        <div class="dropdown custom-translate-dropdown">
+                            <button
+                                class="btn btn-outline-secondary dropdown-toggle rounded-pill d-flex align-items-center"
+                                type="button" id="translateDropdown" data-bs-toggle="dropdown" aria-expanded="false"
+                                style="font-size: 0.95rem; border-color: rgba(0,0,0,0.1);">
+                                <i class="fa-solid fa-language me-2 text-primary-theme"></i> <span
+                                    id="current-lang">English</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-4"
+                                aria-labelledby="translateDropdown" style="font-size: 0.95rem;">
+                                <li><a class="dropdown-item custom-lang-btn" href="javascript:void(0);"
+                                        data-lang="en">🇺🇸 English</a></li>
+                                <li><a class="dropdown-item custom-lang-btn" href="javascript:void(0);"
+                                        data-lang="ar">🇦🇪 Arabic</a></li>
+                                <li><a class="dropdown-item custom-lang-btn" href="javascript:void(0);"
+                                        data-lang="ja">🇯🇵 Japanese</a></li>
+                                <li><a class="dropdown-item custom-lang-btn" href="javascript:void(0);"
+                                        data-lang="de">🇩🇪 German</a></li>
+                                <li><a class="dropdown-item custom-lang-btn" href="javascript:void(0);"
+                                        data-lang="fr">🇫🇷 French</a></li>
+                                <li><a class="dropdown-item custom-lang-btn" href="javascript:void(0);"
+                                        data-lang="es">🇪🇸 Spanish</a></li>
+                                <li><a class="dropdown-item custom-lang-btn" href="javascript:void(0);"
+                                        data-lang="ne">🇳🇵 Nepali</a></li>
+                                <li><a class="dropdown-item custom-lang-btn" href="javascript:void(0);"
+                                        data-lang="bn">🇧🇩 Bengali</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item custom-lang-btn" href="javascript:void(0);"
+                                        data-lang="hi">🇮🇳 Hindi</a></li>
+                            </ul>
+                        </div>
+                        <div id="google_translate_element" style="display: none;"></div>
                     </li>
                 </ul>
             </div>
@@ -531,6 +564,7 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
+                includedLanguages: 'en,ar,ja,de,fr,es,ne,bn,hi',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
@@ -542,7 +576,7 @@
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Custom JS -->
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=6"></script>
 </body>
 
 </html>

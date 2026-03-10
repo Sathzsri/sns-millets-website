@@ -129,4 +129,46 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 1500);
         }
     }
+
+    // Custom Google Translate Dropdown Logic
+    const langButtons = document.querySelectorAll('.custom-lang-btn');
+    const currentLangSpan = document.getElementById('current-lang');
+
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const langCode = this.getAttribute('data-lang');
+            const langName = this.innerText.trim();
+
+            // Update Custom UI Name
+            if (currentLangSpan) currentLangSpan.innerText = langName;
+
+            // Trigger actual Google Translate dropdown
+            const googleSelect = document.querySelector('.goog-te-combo');
+            if (googleSelect) {
+                googleSelect.value = langCode;
+                // Google requires both change and built-in dispatch
+                googleSelect.dispatchEvent(new Event('change'));
+            } else {
+                // Fallback: If google script isn't fully loaded, force via cookie and reload
+                document.cookie = `googtrans=/en/${langCode}; path=/`;
+                document.cookie = `googtrans=/en/${langCode}; domain=.${location.hostname}; path=/`;
+                window.location.reload();
+            }
+        });
+    });
+
+    // Check existing Google Translate cookie to persist the custom UI name
+    setTimeout(() => {
+        const match = document.cookie.match(/(?:^|;)\s*googtrans=([^;]*)/);
+        if (match && currentLangSpan) {
+            const currentLangVal = match[1].split('/')[2]; // Extract target language code
+            if (currentLangVal) {
+                const activeBtn = document.querySelector(`.custom-lang-btn[data-lang="${currentLangVal}"]`);
+                if (activeBtn) {
+                    currentLangSpan.innerText = activeBtn.innerText.trim();
+                }
+            }
+        }
+    }, 1000); // Wait 1 second for Google to init
 });
