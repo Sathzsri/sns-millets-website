@@ -160,7 +160,7 @@ h6,
 
 /* Navbar */
 #mainNav {
-    top: 38px;
+    top: 38px !important;
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: #fff;
