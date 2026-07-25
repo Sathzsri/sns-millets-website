@@ -171,4 +171,109 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }, 1000); // Wait 1 second for Google to init
+
+    // --- Dynamic Realistic View Counter Logic ---
+    function getBlogViews(blogId, publishDateStr) {
+        if (!blogId || !publishDateStr) return 0;
+        const publishDate = new Date(publishDateStr);
+        const currentDate = new Date();
+        
+        let daysSince = Math.max(0, (currentDate - publishDate) / (1000 * 60 * 60 * 24));
+        
+        // Deterministic hash based on blogId
+        let hash = 0;
+        for (let i = 0; i < blogId.length; i++) {
+            hash = blogId.charCodeAt(i) + ((hash << 5) - hash);
+        }
+        hash = Math.abs(hash);
+        
+        // Seeding parameters: average daily views and initial offset
+        const dailyViewsRate = 3 + (hash % 8); // 3 to 10 views per day
+        const initialViews = 150 + (hash % 350); // 150 to 500 initial views
+        
+        let calculatedViews = Math.floor(initialViews + (daysSince * dailyViewsRate));
+        
+        const storageKey = `views_blog_${blogId}`;
+        let storedViews = localStorage.getItem(storageKey);
+        
+        if (storedViews) {
+            storedViews = parseInt(storedViews, 10);
+            if (calculatedViews > storedViews) {
+                localStorage.setItem(storageKey, calculatedViews);
+                storedViews = calculatedViews;
+            }
+        } else {
+            localStorage.setItem(storageKey, calculatedViews);
+            storedViews = calculatedViews;
+        }
+        
+        // Increment once per session
+        const sessionKey = `visited_blog_${blogId}`;
+        if (!sessionStorage.getItem(sessionKey)) {
+            storedViews += 1;
+            localStorage.setItem(storageKey, storedViews);
+            sessionStorage.setItem(sessionKey, 'true');
+        }
+        
+        return storedViews;
+    }
+
+    function getSiteViews() {
+        const startDate = new Date('2021-03-15'); // Company inception (approximate date)
+        const currentDate = new Date();
+        
+        let daysSince = Math.max(0, (currentDate - startDate) / (1000 * 60 * 60 * 24));
+        
+        // Deterministic average daily visitor rate
+        const dailyVisitsRate = 82; // 82 visits per day
+        const baseSiteViews = Math.floor(25400 + (daysSince * dailyVisitsRate));
+        
+        const storageKey = 'views_site_total';
+        let storedSiteViews = localStorage.getItem(storageKey);
+        
+        if (storedSiteViews) {
+            storedSiteViews = parseInt(storedSiteViews, 10);
+            if (baseSiteViews > storedSiteViews) {
+                localStorage.setItem(storageKey, baseSiteViews);
+                storedSiteViews = baseSiteViews;
+            }
+        } else {
+            localStorage.setItem(storageKey, baseSiteViews);
+            storedSiteViews = baseSiteViews;
+        }
+        
+        // Increment once per session
+        const sessionKey = 'visited_site_session';
+        if (!sessionStorage.getItem(sessionKey)) {
+            storedSiteViews += 1;
+            localStorage.setItem(storageKey, storedSiteViews);
+            sessionStorage.setItem(sessionKey, 'true');
+        }
+        
+        return storedSiteViews;
+    }
+
+    // Populate the view elements on the page
+    function populateViews() {
+        // Blog views
+        const blogViewElements = document.querySelectorAll('.blog-views');
+        blogViewElements.forEach(el => {
+            const blogId = el.getAttribute('data-blog-id');
+            const publishDateStr = el.getAttribute('data-publish-date');
+            if (blogId && publishDateStr) {
+                const viewsCount = getBlogViews(blogId, publishDateStr);
+                el.innerText = viewsCount.toLocaleString();
+            }
+        });
+
+        // Site total views
+        const siteViewsElement = document.getElementById('site-views');
+        if (siteViewsElement) {
+            const siteViewsCount = getSiteViews();
+            siteViewsElement.innerText = siteViewsCount.toLocaleString();
+        }
+    }
+
+    // Run views population
+    populateViews();
 });

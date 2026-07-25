@@ -143,7 +143,7 @@
         <div class="container px-4 px-lg-5 text-center mt-5" data-aos="fade-up" data-aos-duration="1000">
             <span class="badge bg-secondary-theme text-dark fw-bold mb-3 px-3 py-2 fs-6">Market Trends</span>
             <h1 class="display-4 fw-bold text-white mb-4 hero-title-3d">Why Global Demand for Indian Millets is Skyrocketing</h1>
-            <p class="lead text-white-50 w-75 mx-auto">March 15, 2026 • 5 Min Read • SNS Global Traders Insights</p>
+            <p class="lead text-white-50 w-75 mx-auto">March 15, 2026 • 5 Min Read • <i class="fa-regular fa-eye mx-2"></i> <span class="blog-views" data-blog-id="global-demand" data-publish-date="2026-03-15">0</span> views • SNS Global Traders Insights</p>
         </div>
     </header>
 
@@ -227,7 +227,7 @@
             </div>
             <hr class="my-4 border-secondary">
             <div class="text-center small text-white-50">
-                Copyright &copy; 2026 - Registered to <strong>SNS Global Traders</strong>. All Rights Reserved.
+                Copyright &copy; 2026 - Registered to <strong>SNS Global Traders</strong>. All Rights Reserved. • <span class="ms-2"><i class="fa-solid fa-users me-1 text-secondary-theme"></i> Total Site Visits: <strong id="site-views" class="text-white">0</strong></span>
             </div>
         </div>
     </footer>
@@ -250,28 +250,7 @@
 
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            offset: 50
-        });
-        
-        // Basic Navbar Shrink Logic to handle white background
-        document.addEventListener('scroll', function () {
-            const mainNav = document.body.querySelector('#mainNav');
-            if (window.scrollY === 0) {
-                mainNav.classList.remove('navbar-shrink');
-            } else {
-                mainNav.classList.add('navbar-shrink');
-            }
-        });
-        
-        // Add shrink initially if page is reloaded scrolled down
-        if (window.scrollY > 0) {
-            document.querySelector('#mainNav').classList.add('navbar-shrink');
-        }
-    </script>
+    <!-- Custom JS -->
+    <script src="script.js?v=6"></script>
 </body>
 </html>
