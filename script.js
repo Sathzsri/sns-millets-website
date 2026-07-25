@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+function initializeWebsite() {
 
     // Initialize AOS Animation Library
     AOS.init({
@@ -175,7 +175,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- Dynamic Realistic View Counter Logic ---
     function getBlogViews(blogId, publishDateStr) {
         if (!blogId || !publishDateStr) return 0;
-        const publishDate = new Date(publishDateStr);
+        // Replace dashes with slashes for cross-browser parsing (e.g. Safari compatibility)
+        const publishDate = new Date(publishDateStr.replace(/-/g, '/'));
         const currentDate = new Date();
         
         let daysSince = Math.max(0, (currentDate - publishDate) / (1000 * 60 * 60 * 24));
@@ -276,4 +277,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Run views population
     populateViews();
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeWebsite);
+} else {
+    initializeWebsite();
+}
