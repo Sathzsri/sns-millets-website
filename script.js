@@ -188,18 +188,23 @@ function initializeWebsite() {
         }
         hash = Math.abs(hash);
         
-        // Seeding parameters: average daily views and initial offset
-        const dailyViewsRate = 3 + (hash % 8); // 3 to 10 views per day
-        const initialViews = 150 + (hash % 350); // 150 to 500 initial views
+        // Seeding parameters: average daily views and initial offset calibrated to 900-1000 views max cap
+        const maxCap = 900 + (hash % 100); // 900 to 999 max cap
+        const initialViews = 450 + (hash % 150); // 450 to 599 initial views
+        const dailyViewsRate = 1.0 + ((hash % 10) / 10); // 1.0 to 1.9 views per day
         
         let calculatedViews = Math.floor(initialViews + (daysSince * dailyViewsRate));
+        if (calculatedViews > maxCap) {
+            calculatedViews = maxCap;
+        }
         
         const storageKey = `views_blog_${blogId}`;
         let storedViews = localStorage.getItem(storageKey);
         
         if (storedViews) {
             storedViews = parseInt(storedViews, 10);
-            if (calculatedViews > storedViews) {
+            // Overwrite stored views if they exceed the new maxCap or are lagging calculated views
+            if (storedViews > maxCap || calculatedViews > storedViews) {
                 localStorage.setItem(storageKey, calculatedViews);
                 storedViews = calculatedViews;
             }
