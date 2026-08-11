@@ -188,9 +188,9 @@ function initializeWebsite() {
         }
         hash = Math.abs(hash);
         
-        // Seeding parameters: average daily views and initial offset calibrated to 900-1000 views max cap
-        const maxCap = 900 + (hash % 100); // 900 to 999 max cap
-        const initialViews = 450 + (hash % 150); // 450 to 599 initial views
+        // Seeding parameters: average daily views and initial offset calibrated to < 600 views max cap
+        const maxCap = 400 + (hash % 200); // 400 to 599 max cap
+        const initialViews = 15 + (hash % 30); // 15 to 44 initial views (starts small for organic feel)
         const dailyViewsRate = 1.0 + ((hash % 10) / 10); // 1.0 to 1.9 views per day
         
         let calculatedViews = Math.floor(initialViews + (daysSince * dailyViewsRate));
