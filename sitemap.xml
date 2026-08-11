@@ -3,12 +3,20 @@
   <!-- Main Landing Page -->
   <url>
     <loc>https://www.snsglobaltraders.com/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
   
-  <!-- Blog 1: Barnyard Millet (July 28, 2026) -->
+  <!-- Blog 1: Pearl Millet Supply (August 11, 2026) -->
+  <url>
+    <loc>https://www.snsglobaltraders.com/india-pearl-millet-supply-protection-2026-global-buyers.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  
+  <!-- Blog 2: Barnyard Millet (July 28, 2026) -->
   <url>
     <loc>https://www.snsglobaltraders.com/barnyard-millet-kuthiraivali-nutrition-benefits-export-india.html</loc>
     <lastmod>2026-07-28</lastmod>
