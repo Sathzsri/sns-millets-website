@@ -701,11 +701,12 @@ body {
     border-color: rgba(209, 179, 123, 0.15);
 }
 .trust-badge-item img {
-    transition: filter 0.3s ease;
-    filter: grayscale(100%) opacity(60%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.95;
 }
 .trust-badge-item:hover img {
-    filter: grayscale(0%) opacity(100%);
+    transform: scale(1.08);
+    opacity: 1;
 }
 
 /* Specs Interactive Tabs */
