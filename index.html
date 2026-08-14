@@ -154,6 +154,47 @@
         </div>
     </header>
 
+    <!-- B2B Certifications & Trust Banner -->
+    <section class="trust-banner py-4 bg-white border-bottom shadow-sm">
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center g-4">
+                <div class="col-12 text-center mb-1">
+                    <span class="text-uppercase tracking-wider text-muted small fw-bold" style="letter-spacing: 2px;">Federally Registered & Certified Indian Exporter</span>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="0">
+                    <div class="trust-badge-item d-flex flex-column align-items-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Agricultural & Processed Food Products Export Development Authority (Ministry of Commerce, India)">
+                        <img src="apeda-logo.png" alt="APEDA Certified Exporter" class="img-fluid mb-2" style="max-height: 45px; object-fit: contain;">
+                        <span class="fw-bold small text-dark">APEDA</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="trust-badge-item d-flex flex-column align-items-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Federation of Indian Export Organisations - Set up by Ministry of Commerce">
+                        <img src="fieo-logo.png" alt="FIEO Member" class="img-fluid mb-2" style="max-height: 45px; object-fit: contain;">
+                        <span class="fw-bold small text-dark">FIEO</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="trust-badge-item d-flex flex-column align-items-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Import Export Code issued by Directorate General of Foreign Trade (DGFT)">
+                        <img src="iec-logo.png" alt="IEC Registered" class="img-fluid mb-2" style="max-height: 45px; object-fit: contain;">
+                        <span class="fw-bold small text-dark">IEC</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="trust-badge-item d-flex flex-column align-items-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Micro, Small & Medium Enterprises Registered (Govt of India)">
+                        <img src="msme-logo.png" alt="MSME Registered Enterprise" class="img-fluid mb-2" style="max-height: 45px; object-fit: contain;">
+                        <span class="fw-bold small text-dark">MSME</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="trust-badge-item d-flex flex-column align-items-center" data-bs-toggle="tooltip" data-bs-placement="top" title="Goods and Services Tax Registered Exporter">
+                        <img src="gst-logo.png" alt="GST Registered" class="img-fluid mb-2" style="max-height: 45px; object-fit: contain;">
+                        <span class="fw-bold small text-dark">GST</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="page-section" id="about">
         <div class="container px-4 px-lg-5">
@@ -520,40 +561,352 @@
                 </div>
             </div>
 
-            <!-- Specs & Packaging -->
-            <div class="row mt-5" data-aos="fade-up">
+            <!-- Interactive Specs & Packaging Viewer -->
+            <div class="row mt-5" data-aos="fade-up" id="specs-viewer">
                 <div class="col-12">
-                    <div class="bg-primary-theme text-white rounded-4 p-4 p-md-5 shadow">
-                        <div class="row">
-                            <div class="col-md-6 mb-4 mb-md-0">
-                                <h4 class="text-decoration-underline mb-4 fw-bold">Quality Specifications:</h4>
-                                <ul class="list-unstyled lh-lg mb-0">
-                                    <li><i class="fa-solid fa-check-circle text-secondary-theme me-2"></i> Purity: Up to
-                                        99.5%</li>
-                                    <li><i class="fa-solid fa-check-circle text-secondary-theme me-2"></i> Moisture: Max
-                                        12% (As per buyer req.)</li>
-                                    <li><i class="fa-solid fa-check-circle text-secondary-theme me-2"></i> Foreign
-                                        Matter: As per agreed spec</li>
-                                    <li><i class="fa-solid fa-check-circle text-secondary-theme me-2"></i> Machine
-                                        Cleaned / Sortex Options</li>
-                                    <li><i class="fa-solid fa-check-circle text-secondary-theme me-2"></i> Latest Crop
-                                        Availability</li>
-                                </ul>
+                    <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+                        <h3 class="fw-bold text-primary-theme text-center mb-4">Export Quality Specifications & Standard Packaging</h3>
+                        
+                        <!-- Tabs Navigation -->
+                        <ul class="nav nav-tabs justify-content-center specs-tab-nav mb-4" id="specsTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="finger-tab" data-bs-toggle="tab" data-bs-target="#finger-specs" type="button" role="tab" aria-controls="finger-specs" aria-selected="true">Finger Millet (Ragi)</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pearl-tab" data-bs-toggle="tab" data-bs-target="#pearl-specs" type="button" role="tab" aria-controls="pearl-specs" aria-selected="false">Pearl Millet (Bajra)</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="foxtail-tab" data-bs-toggle="tab" data-bs-target="#foxtail-specs" type="button" role="tab" aria-controls="foxtail-specs" aria-selected="false">Foxtail Millet (Thinai)</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="kodo-tab" data-bs-toggle="tab" data-bs-target="#kodo-specs" type="button" role="tab" aria-controls="kodo-specs" aria-selected="false">Kodo Millet (Varagu)</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="barnyard-tab" data-bs-toggle="tab" data-bs-target="#barnyard-specs" type="button" role="tab" aria-controls="barnyard-specs" aria-selected="false">Barnyard Millet (Kuthiraivali)</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="browntop-tab" data-bs-toggle="tab" data-bs-target="#browntop-specs" type="button" role="tab" aria-controls="browntop-specs" aria-selected="false">Browntop Millet</button>
+                            </li>
+                        </ul>
+
+                        <!-- Tabs Content -->
+                        <div class="tab-content" id="specsTabContent">
+                            <!-- Finger Millet -->
+                            <div class="tab-pane fade show active" id="finger-specs" role="tabpanel" aria-labelledby="finger-tab">
+                                <div class="row g-4">
+                                    <div class="col-lg-7">
+                                        <div class="table-responsive">
+                                            <table class="table specs-table mb-0 align-middle">
+                                                <tbody>
+                                                    <tr>
+                                                        <th class="w-30 py-3 ps-3">Parameter</th>
+                                                        <th class="w-70 py-3 ps-3">Export Standard Specification</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Purity</td>
+                                                        <td class="py-3 ps-3 text-muted">99.5% Min (Sortex Cleaned) / 99% Min (Machine Cleaned)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Moisture</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 12%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Foreign Matter</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 0.5% (Sortex) / Max 1.0% (Machine Cleaned)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Weevilled / Damaged Grains</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 1.0%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Crop Year</td>
+                                                        <td class="py-3 ps-3 text-muted">Latest 2026 Season Harvest</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 d-flex flex-column justify-content-between">
+                                        <div class="bg-light-theme p-4 rounded-4 border h-100 mb-3">
+                                            <h5 class="fw-bold text-primary-theme mb-3"><i class="fa-solid fa-box-open me-2"></i>Packaging & Logistical Details</h5>
+                                            <ul class="list-unstyled lh-lg text-muted mb-0">
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Standard:</strong> 25 kg / 50 kg PP Bags</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Premium:</strong> HDPE Laminated / Paper Bags</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Retail Ready:</strong> 500g to 5kg Custom Standup Pouches</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>FCL Capacity:</strong> ~24 Metric Tons per 20ft Container</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Sample Kit:</strong> Free 500g physical sample box available</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary-theme py-3 rounded-pill w-100 get-specs-quote-btn" data-millet="Finger Millet (Ragi)">
+                                            Request Finger Millet Quote <i class="fa-solid fa-paper-plane ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <h4 class="text-decoration-underline mb-4 fw-bold">Packaging Options:</h4>
-                                <ul class="list-unstyled lh-lg mb-0">
-                                    <li><i class="fa-solid fa-box text-secondary-theme me-2"></i> 25 kg / 50 kg PP Bags
-                                    </li>
-                                    <li><i class="fa-solid fa-box text-secondary-theme me-2"></i> HDPE Laminated Bags
-                                    </li>
-                                    <li><i class="fa-solid fa-box text-secondary-theme me-2"></i> Retail Packing
-                                        (500g–5kg)</li>
-                                    <li><i class="fa-solid fa-box text-secondary-theme me-2"></i> Private Label Support
-                                    </li>
-                                    <li><i class="fa-solid fa-box text-secondary-theme me-2"></i> Palletized /
-                                        Non-Palletized</li>
-                                </ul>
+                            
+                            <!-- Pearl Millet -->
+                            <div class="tab-pane fade" id="pearl-specs" role="tabpanel" aria-labelledby="pearl-tab">
+                                <div class="row g-4">
+                                    <div class="col-lg-7">
+                                        <div class="table-responsive">
+                                            <table class="table specs-table mb-0 align-middle">
+                                                <tbody>
+                                                    <tr>
+                                                        <th class="w-30 py-3 ps-3">Parameter</th>
+                                                        <th class="w-70 py-3 ps-3">Export Standard Specification</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Purity</td>
+                                                        <td class="py-3 ps-3 text-muted">99% Min (Sortex Cleaned) / 98.5% Min (Machine Cleaned)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Moisture</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 12%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Foreign Matter</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 1.0%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Discolored / Immature Grains</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 2.0%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Crop Year</td>
+                                                        <td class="py-3 ps-3 text-muted">Latest 2026 Season Harvest</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 d-flex flex-column justify-content-between">
+                                        <div class="bg-light-theme p-4 rounded-4 border h-100 mb-3">
+                                            <h5 class="fw-bold text-primary-theme mb-3"><i class="fa-solid fa-box-open me-2"></i>Packaging & Logistical Details</h5>
+                                            <ul class="list-unstyled lh-lg text-muted mb-0">
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Standard:</strong> 25 kg / 50 kg PP Bags</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Premium:</strong> HDPE Laminated / Paper Bags</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Retail Ready:</strong> 1kg to 5kg Standup Custom Pouches</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>FCL Capacity:</strong> ~24 Metric Tons per 20ft Container</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Sample Kit:</strong> Free 500g physical sample box available</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary-theme py-3 rounded-pill w-100 get-specs-quote-btn" data-millet="Pearl Millet (Bajra)">
+                                            Request Pearl Millet Quote <i class="fa-solid fa-paper-plane ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Foxtail Millet -->
+                            <div class="tab-pane fade" id="foxtail-specs" role="tabpanel" aria-labelledby="foxtail-tab">
+                                <div class="row g-4">
+                                    <div class="col-lg-7">
+                                        <div class="table-responsive">
+                                            <table class="table specs-table mb-0 align-middle">
+                                                <tbody>
+                                                    <tr>
+                                                        <th class="w-30 py-3 ps-3">Parameter</th>
+                                                        <th class="w-70 py-3 ps-3">Export Standard Specification</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Purity</td>
+                                                        <td class="py-3 ps-3 text-muted">99.5% Min (Sortex Cleaned) / 99% Min (Machine Cleaned)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Moisture</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 12%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Foreign Matter</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 0.5% (Sortex) / Max 1.0% (Machine Cleaned)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Other Food Grains</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 0.5%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Crop Year</td>
+                                                        <td class="py-3 ps-3 text-muted">Latest 2026 Season Harvest</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 d-flex flex-column justify-content-between">
+                                        <div class="bg-light-theme p-4 rounded-4 border h-100 mb-3">
+                                            <h5 class="fw-bold text-primary-theme mb-3"><i class="fa-solid fa-box-open me-2"></i>Packaging & Logistical Details</h5>
+                                            <ul class="list-unstyled lh-lg text-muted mb-0">
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Standard:</strong> 25 kg / 50 kg PP Bags</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Premium:</strong> HDPE Laminated / Paper Bags</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Retail Ready:</strong> Custom retail packaging options</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>FCL Capacity:</strong> ~24 Metric Tons per 20ft Container</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Sample Kit:</strong> Free 500g physical sample box available</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary-theme py-3 rounded-pill w-100 get-specs-quote-btn" data-millet="Foxtail Millet (Thinai)">
+                                            Request Foxtail Millet Quote <i class="fa-solid fa-paper-plane ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Kodo Millet -->
+                            <div class="tab-pane fade" id="kodo-specs" role="tabpanel" aria-labelledby="kodo-tab">
+                                <div class="row g-4">
+                                    <div class="col-lg-7">
+                                        <div class="table-responsive">
+                                            <table class="table specs-table mb-0 align-middle">
+                                                <tbody>
+                                                    <tr>
+                                                        <th class="w-30 py-3 ps-3">Parameter</th>
+                                                        <th class="w-70 py-3 ps-3">Export Standard Specification</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Purity</td>
+                                                        <td class="py-3 ps-3 text-muted">99.5% Min (Sortex Cleaned) / 99% Min (Machine Cleaned)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Moisture</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 12%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Foreign Matter</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 0.5%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Damaged / Immature Grains</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 1.0%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Crop Year</td>
+                                                        <td class="py-3 ps-3 text-muted">Latest 2026 Season Harvest</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 d-flex flex-column justify-content-between">
+                                        <div class="bg-light-theme p-4 rounded-4 border h-100 mb-3">
+                                            <h5 class="fw-bold text-primary-theme mb-3"><i class="fa-solid fa-box-open me-2"></i>Packaging & Logistical Details</h5>
+                                            <ul class="list-unstyled lh-lg text-muted mb-0">
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Standard:</strong> 25 kg / 50 kg PP Bags</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Premium:</strong> HDPE Laminated / Paper Bags</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Retail Ready:</strong> Custom private labeling supported</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>FCL Capacity:</strong> ~24 Metric Tons per 20ft Container</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Sample Kit:</strong> Free 500g physical sample box available</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary-theme py-3 rounded-pill w-100 get-specs-quote-btn" data-millet="Kodo Millet (Varagu)">
+                                            Request Kodo Millet Quote <i class="fa-solid fa-paper-plane ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Barnyard Millet -->
+                            <div class="tab-pane fade" id="barnyard-specs" role="tabpanel" aria-labelledby="barnyard-tab">
+                                <div class="row g-4">
+                                    <div class="col-lg-7">
+                                        <div class="table-responsive">
+                                            <table class="table specs-table mb-0 align-middle">
+                                                <tbody>
+                                                    <tr>
+                                                        <th class="w-30 py-3 ps-3">Parameter</th>
+                                                        <th class="w-70 py-3 ps-3">Export Standard Specification</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Purity</td>
+                                                        <td class="py-3 ps-3 text-muted">99.5% Min (Sortex Cleaned) / 99% Min (Machine Cleaned)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Moisture</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 12%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Foreign Matter</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 0.5% (Sortex) / Max 1.0% (Machine Cleaned)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Damaged / Weevilled Grains</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 0.8%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Crop Year</td>
+                                                        <td class="py-3 ps-3 text-muted">Latest 2026 Season Harvest</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 d-flex flex-column justify-content-between">
+                                        <div class="bg-light-theme p-4 rounded-4 border h-100 mb-3">
+                                            <h5 class="fw-bold text-primary-theme mb-3"><i class="fa-solid fa-box-open me-2"></i>Packaging & Logistical Details</h5>
+                                            <ul class="list-unstyled lh-lg text-muted mb-0">
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Standard:</strong> 25 kg / 50 kg PP Bags</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Premium:</strong> HDPE Laminated / Paper Bags</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Retail Ready:</strong> Custom standup pouches available</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>FCL Capacity:</strong> ~24 Metric Tons per 20ft Container</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Sample Kit:</strong> Free 500g physical sample box available</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary-theme py-3 rounded-pill w-100 get-specs-quote-btn" data-millet="Barnyard Millet (Kuthiraivali)">
+                                            Request Barnyard Millet Quote <i class="fa-solid fa-paper-plane ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Browntop Millet -->
+                            <div class="tab-pane fade" id="browntop-specs" role="tabpanel" aria-labelledby="browntop-tab">
+                                <div class="row g-4">
+                                    <div class="col-lg-7">
+                                        <div class="table-responsive">
+                                            <table class="table specs-table mb-0 align-middle">
+                                                <tbody>
+                                                    <tr>
+                                                        <th class="w-30 py-3 ps-3">Parameter</th>
+                                                        <th class="w-70 py-3 ps-3">Export Standard Specification</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Purity</td>
+                                                        <td class="py-3 ps-3 text-muted">99% Min (Sortex Cleaned) / 98.5% Min (Machine Cleaned)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Moisture</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 12%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Foreign Matter</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 1.0%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Admixture</td>
+                                                        <td class="py-3 ps-3 text-muted">Max 1.0%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="fw-bold py-3 ps-3 text-dark">Crop Year</td>
+                                                        <td class="py-3 ps-3 text-muted">Latest 2026 Season Harvest</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 d-flex flex-column justify-content-between">
+                                        <div class="bg-light-theme p-4 rounded-4 border h-100 mb-3">
+                                            <h5 class="fw-bold text-primary-theme mb-3"><i class="fa-solid fa-box-open me-2"></i>Packaging & Logistical Details</h5>
+                                            <ul class="list-unstyled lh-lg text-muted mb-0">
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Standard:</strong> 25 kg / 50 kg PP Bags</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Premium:</strong> HDPE Laminated / Paper Bags</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Retail Ready:</strong> Standup customized retail packs</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>FCL Capacity:</strong> ~24 Metric Tons per 20ft Container</li>
+                                                <li><i class="fa-solid fa-circle-check text-secondary-theme me-2"></i><strong>Sample Kit:</strong> Free 500g physical sample box available</li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-primary-theme py-3 rounded-pill w-100 get-specs-quote-btn" data-millet="Browntop Millet">
+                                            Request Browntop Millet Quote <i class="fa-solid fa-paper-plane ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -778,55 +1131,193 @@
                     <!-- The 3D form card -->
                     <div class="contact-form-card shadow-lg rounded-5 p-5 bg-white position-relative">
                         <!-- Submit goes to info@snsglobaltraders.com -->
-                        <form action="https://formsubmit.co/info@snsglobaltraders.com" method="POST"
-                            class="position-relative z-2">
+                        <!-- Multi-Step B2B Sourcing Quote Builder Form -->
+                        <form id="b2bQuoteForm" action="https://formsubmit.co/info@snsglobaltraders.com" method="POST" class="position-relative z-2">
                             <!-- Optional FormSubmit Settings -->
-                            <input type="hidden" name="_subject" value="New lead from SNS Millets Website!">
+                            <input type="hidden" name="_subject" value="New B2B Import Lead - SNS Millets Portal">
                             <input type="hidden" name="_captcha" value="false">
-                            <!-- Honeypot -->
-                            <input type="text" name="_honey" style="display:none">
+                            <input type="hidden" name="_honey" style="display:none">
+                            
+                            <!-- Custom assembled text area (hidden, compiled via JS) -->
+                            <input type="hidden" name="message" id="compiledMessage">
 
-                            <div class="row gx-4">
-                                <div class="col-md-6 mb-4">
-                                    <div class="form-floating form-group-3d">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Name"
-                                            required>
-                                        <label for="name"><i
-                                                class="fa-regular fa-user me-2 text-secondary-theme"></i>Your
-                                            Name</label>
+                            <!-- Step Indicators -->
+                            <div class="step-indicator-wrapper mb-5">
+                                <div class="step-progress-bar" id="stepProgressBar"></div>
+                                <div class="step-dot active" id="dot1">1<span class="step-label" style="left: 50%; transform: translateX(-50%);">Crops</span></div>
+                                <div class="step-dot" id="dot2">2<span class="step-label" style="left: 50%; transform: translateX(-50%);">Logistics</span></div>
+                                <div class="step-dot" id="dot3">3<span class="step-label" style="left: 50%; transform: translateX(-50%);">Contact</span></div>
+                            </div>
+
+                            <!-- Step 1: Crop Selection & Processing -->
+                            <div class="form-step active" id="step1">
+                                <h5 class="fw-bold text-dark mb-4 text-center">Step 1: Select Crops & Processing Grade</h5>
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-6 col-lg-4">
+                                        <input type="checkbox" name="crops" value="Finger Millet" id="crop_finger" class="b2b-check-input">
+                                        <label for="crop_finger" class="b2b-check-card w-100">
+                                            <i class="fa-solid fa-wheat-awn mb-2"></i>
+                                            <span class="fw-bold text-dark small">Finger Millet (Ragi)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <input type="checkbox" name="crops" value="Pearl Millet" id="crop_pearl" class="b2b-check-input">
+                                        <label for="crop_pearl" class="b2b-check-card w-100">
+                                            <i class="fa-solid fa-wheat-awn mb-2"></i>
+                                            <span class="fw-bold text-dark small">Pearl Millet (Bajra)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <input type="checkbox" name="crops" value="Foxtail Millet" id="crop_foxtail" class="b2b-check-input">
+                                        <label for="crop_foxtail" class="b2b-check-card w-100">
+                                            <i class="fa-solid fa-wheat-awn mb-2"></i>
+                                            <span class="fw-bold text-dark small">Foxtail Millet (Thinai)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <input type="checkbox" name="crops" value="Kodo Millet" id="crop_kodo" class="b2b-check-input">
+                                        <label for="crop_kodo" class="b2b-check-card w-100">
+                                            <i class="fa-solid fa-wheat-awn mb-2"></i>
+                                            <span class="fw-bold text-dark small">Kodo Millet (Varagu)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <input type="checkbox" name="crops" value="Barnyard Millet" id="crop_barnyard" class="b2b-check-input">
+                                        <label for="crop_barnyard" class="b2b-check-card w-100">
+                                            <i class="fa-solid fa-wheat-awn mb-2"></i>
+                                            <span class="fw-bold text-dark small">Barnyard (Kuthiraivali)</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <input type="checkbox" name="crops" value="Browntop Millet" id="crop_browntop" class="b2b-check-input">
+                                        <label for="crop_browntop" class="b2b-check-card w-100">
+                                            <i class="fa-solid fa-wheat-awn mb-2"></i>
+                                            <span class="fw-bold text-dark small">Browntop Millet</span>
+                                        </label>
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-4">
-                                    <div class="form-floating form-group-3d">
-                                        <input type="email" class="form-control" id="email" name="email"
-                                            placeholder="Email" required>
-                                        <label for="email"><i
-                                                class="fa-regular fa-envelope me-2 text-secondary-theme"></i>Email
-                                            Address</label>
+                                
+                                <div class="mb-4 text-center">
+                                    <label class="form-label fw-bold text-dark d-block mb-3">Processing Preference:</label>
+                                    <div class="d-flex justify-content-center gap-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="purity_grade" id="grade_sortex" value="Sortex Cleaned (99.5% Purity)" checked>
+                                            <label class="form-check-label fw-semibold text-dark" for="grade_sortex">
+                                                Sortex Cleaned (99.5%)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="purity_grade" id="grade_machine" value="Machine Cleaned (99% Purity)">
+                                            <label class="form-check-label fw-semibold text-dark" for="grade_machine">
+                                                Machine Cleaned (99%)
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12 mb-4">
-                                    <div class="form-floating form-group-3d">
-                                        <input type="text" class="form-control" id="subject" name="subject"
-                                            placeholder="Subject" required>
-                                        <label for="subject"><i
-                                                class="fa-solid fa-briefcase me-2 text-secondary-theme"></i>Subject</label>
+
+                                <div class="text-center mt-4">
+                                    <button type="button" class="btn btn-primary-theme px-5 py-3 rounded-pill" onclick="nextStep(2)">
+                                        Continue to Logistics <i class="fa-solid fa-arrow-right ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Logistics & Packaging -->
+                            <div class="form-step" id="step2">
+                                <h5 class="fw-bold text-dark mb-4 text-center">Step 2: Logistics & Volume Requirements</h5>
+                                
+                                <div class="row g-4 mb-4">
+                                    <!-- Shipment Volume -->
+                                    <div class="col-md-6">
+                                        <label for="order_volume" class="form-label fw-bold text-dark"><i class="fa-solid fa-weight-hanging text-secondary-theme me-2"></i>Target Sourcing Volume</label>
+                                        <select class="form-select py-3 rounded-3" id="order_volume" name="volume">
+                                            <option value="LCL (Less than Container Load)">LCL (Less than Container Load / < 15 MT)</option>
+                                            <option value="1x20ft Container (approx 24 MT)" selected>1x20ft FCL Container (~24 MT)</option>
+                                            <option value="Multi-Container Contract (24 MT+)">Multi-Container Contract</option>
+                                            <option value="B2B Sample Kit request (500g)">B2B Physical Sample Kit (500g)</option>
+                                        </select>
+                                    </div>
+                                    <!-- Packaging Sizing -->
+                                    <div class="col-md-6">
+                                        <label for="order_packing" class="form-label fw-bold text-dark"><i class="fa-solid fa-box text-secondary-theme me-2"></i>Packaging Configuration</label>
+                                        <select class="form-select py-3 rounded-3" id="order_packing" name="packaging">
+                                            <option value="Standard 25kg PP Bags" selected>Standard 25kg PP Bags</option>
+                                            <option value="Heavy duty 50kg PP Bags">Heavy duty 50kg PP Bags</option>
+                                            <option value="Laminated HDPE Moisture-Barrier Bags">Laminated HDPE Moisture-Barrier Bags</option>
+                                            <option value="Custom Private Label Retail Standup Pouches">Custom Private Label Retail Sizing (500g–5kg)</option>
+                                        </select>
+                                    </div>
+                                    <!-- Port of Destination -->
+                                    <div class="col-md-6">
+                                        <div class="form-floating form-group-3d">
+                                            <input type="text" class="form-control" id="destination_port" name="port" placeholder="Port of Destination" required>
+                                            <label for="destination_port"><i class="fa-solid fa-ship me-2 text-secondary-theme"></i>Port & Country of Destination</label>
+                                        </div>
+                                    </div>
+                                    <!-- Incoterm selection -->
+                                    <div class="col-md-6">
+                                        <label for="incoterm" class="form-label fw-bold text-dark"><i class="fa-solid fa-file-contract text-secondary-theme me-2"></i>Preferred Delivery Incoterm</label>
+                                        <select class="form-select py-3 rounded-3" id="incoterm" name="incoterm">
+                                            <option value="CIF (Cost, Insurance & Freight)" selected>CIF - Delivery to Destination Port</option>
+                                            <option value="FOB (Free On Board)">FOB - Freight arranged by Buyer</option>
+                                            <option value="CFR (Cost & Freight)">CFR - Insurance arranged by Buyer</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-md-12 mb-5">
-                                    <div class="form-floating form-group-3d">
-                                        <textarea class="form-control" id="message" name="message" placeholder="Message"
-                                            style="height: 150px" required></textarea>
-                                        <label for="message"><i
-                                                class="fa-regular fa-comment-dots me-2 text-secondary-theme"></i>Your
-                                            Message</label>
+
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-outline-secondary px-4 py-3 rounded-pill" onclick="prevStep(1)">
+                                        <i class="fa-solid fa-arrow-left me-2"></i> Back
+                                    </button>
+                                    <button type="button" class="btn btn-primary-theme px-5 py-3 rounded-pill" onclick="nextStep(3)">
+                                        Continue to Contact <i class="fa-solid fa-arrow-right ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Contact & Submit -->
+                            <div class="form-step" id="step3">
+                                <h5 class="fw-bold text-dark mb-4 text-center">Step 3: Sourcing Contact Credentials</h5>
+                                
+                                <div class="row g-4 mb-4">
+                                    <div class="col-md-6">
+                                        <div class="form-floating form-group-3d">
+                                            <input type="text" class="form-control" id="buyer_name" name="name" placeholder="Name" required>
+                                            <label for="buyer_name"><i class="fa-regular fa-user me-2 text-secondary-theme"></i>Your Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating form-group-3d">
+                                            <input type="email" class="form-control" id="buyer_email" name="email" placeholder="Email" required>
+                                            <label for="buyer_email"><i class="fa-regular fa-envelope me-2 text-secondary-theme"></i>Corporate Email Address</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating form-group-3d">
+                                            <input type="text" class="form-control" id="buyer_company" name="company" placeholder="Company Name" required>
+                                            <label for="buyer_company"><i class="fa-solid fa-building me-2 text-secondary-theme"></i>Company / Corporate Entity</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating form-group-3d">
+                                            <input type="text" class="form-control" id="buyer_phone" name="phone" placeholder="Phone Number" required>
+                                            <label for="buyer_phone"><i class="fa-solid fa-phone me-2 text-secondary-theme"></i>Contact / WhatsApp Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating form-group-3d">
+                                            <textarea class="form-control" id="buyer_notes" name="notes" placeholder="Additional details or packaging specifications" style="height: 120px"></textarea>
+                                            <label for="buyer_notes"><i class="fa-regular fa-comment-dots me-2 text-secondary-theme"></i>Specific Quality Standards or Packaging Instructions</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-12 text-center">
-                                    <button
-                                        class="btn btn-primary-theme btn-lg rounded-pill px-5 py-3 shadow w-100 btn-submit-3d"
-                                        type="submit">
-                                        Send Message <i class="fa-solid fa-paper-plane ms-2"></i>
+
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-outline-secondary px-4 py-3 rounded-pill" onclick="prevStep(2)">
+                                        <i class="fa-solid fa-arrow-left me-2"></i> Back
+                                    </button>
+                                    <button type="submit" class="btn btn-primary-theme px-5 py-3 rounded-pill btn-submit-3d">
+                                        Submit Bulk Export Inquiry <i class="fa-solid fa-paper-plane ms-2"></i>
                                     </button>
                                 </div>
                             </div>

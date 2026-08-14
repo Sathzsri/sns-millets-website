@@ -679,3 +679,191 @@ body {
 .read-more-link:hover {
     opacity: 0.8;
 }
+
+/* --- B2B Portal Custom Styles --- */
+
+/* Trust Banner */
+.trust-banner {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+.trust-badge-item {
+    transition: transform 0.3s ease, filter 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 16px;
+    border: 1px solid transparent;
+}
+.trust-badge-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(209, 179, 123, 0.05);
+    border-color: rgba(209, 179, 123, 0.15);
+}
+.trust-badge-item img {
+    transition: filter 0.3s ease;
+    filter: grayscale(100%) opacity(60%);
+}
+.trust-badge-item:hover img {
+    filter: grayscale(0%) opacity(100%);
+}
+
+/* Specs Interactive Tabs */
+.specs-tab-nav {
+    border: none;
+    border-bottom: 2px solid #eee;
+}
+.specs-tab-nav .nav-link {
+    border: none;
+    background: none;
+    color: var(--dark-text);
+    font-weight: 600;
+    padding: 12px 20px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-radius: 0;
+}
+.specs-tab-nav .nav-link:hover {
+    color: var(--primary-color);
+}
+.specs-tab-nav .nav-link.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    background: none;
+}
+.specs-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+.specs-table th {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    border: none;
+}
+.specs-table td {
+    vertical-align: middle;
+    border-color: #f5f5f5;
+}
+.specs-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Multi-Step B2B Quote Builder */
+.form-step {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out forwards;
+}
+.form-step.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.step-indicator-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    position: relative;
+}
+.step-indicator-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 8%;
+    right: 8%;
+    height: 3px;
+    background-color: #eee;
+    z-index: 1;
+}
+.step-progress-bar {
+    position: absolute;
+    top: 15px;
+    left: 8%;
+    width: 0%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    z-index: 1;
+    transition: width 0.4s ease;
+}
+.step-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid #eee;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    color: #aaa;
+    position: relative;
+}
+.step-dot.active {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(116, 42, 42, 0.2);
+}
+.step-dot.completed {
+    border-color: var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+.b2b-check-card {
+    border: 2px solid #eee;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 15px;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+.b2b-check-card:hover {
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.b2b-check-input {
+    display: none;
+}
+.b2b-check-input:checked + .b2b-check-card {
+    border-color: var(--primary-color);
+    background-color: rgba(116, 42, 42, 0.03);
+    box-shadow: 0 4px 15px rgba(116, 42, 42, 0.08);
+}
+.b2b-check-card i {
+    font-size: 1.5rem;
+    color: #888;
+    transition: color 0.3s;
+}
+.b2b-check-input:checked + .b2b-check-card i {
+    color: var(--primary-color);
+}
+.step-indicator-wrapper .step-label {
+    position: absolute;
+    bottom: -22px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #aaa;
+    white-space: nowrap;
+}
+.step-dot.active .step-label {
+    color: var(--primary-color);
+}
+.step-dot.completed .step-label {
+    color: var(--secondary-color);
+}
