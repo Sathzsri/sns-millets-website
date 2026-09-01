@@ -867,4 +867,21 @@ body {
 }
 .step-dot.completed .step-label {
     color: var(--secondary-color);
-}
+}
+
+/* Trust Badge Card Enhancements */
+.trust-badge-card {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+.trust-badge-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(116, 42, 42, 0.12) !important;
+    border-color: var(--secondary-color) !important;
+}
+.trust-badge-img {
+    transition: transform 0.3s ease;
+}
+.trust-badge-card:hover .trust-badge-img {
+    transform: scale(1.08);
+}
+
