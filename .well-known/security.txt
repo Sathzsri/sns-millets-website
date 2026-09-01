@@ -1,0 +1,4 @@
+Contact: mailto:info@snsglobaltraders.com
+Canonical: https://www.snsglobaltraders.com/.well-known/security.txt
+Preferred-Languages: en
+Policy: https://www.snsglobaltraders.com/
