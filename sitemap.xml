@@ -3,12 +3,20 @@
   <!-- Main Landing Page -->
   <url>
     <loc>https://www.snsglobaltraders.com/</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
   
-  <!-- Blog 1: USD 44B Global Millet Market (September 1, 2026) -->
+  <!-- Blog 1: Foxtail Millet Thinai Nutrition (September 9, 2026) -->
+  <url>
+    <loc>https://www.snsglobaltraders.com/foxtail-millet-thinai-nutrition-benefits-export-india-2026.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  
+  <!-- Blog 2: USD 44B Global Millet Market (September 1, 2026) -->
   <url>
     <loc>https://www.snsglobaltraders.com/global-millet-market-growth-2026-international-buyers.html</loc>
     <lastmod>2026-09-01</lastmod>
